@@ -1,0 +1,28 @@
+{
+  "name": "prismastudy",
+  "version": "1.0.0",
+  "description": "Prisma Study",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrsigithub/prismaStudy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hrsigithub/prismaStudy/issues"
+  },
+  "homepage": "https://github.com/hrsigithub/prismaStudy#readme",
+  "dependencies": {
+    "@prisma/client": "^6.2.1",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.2.1"
+  }
+}
