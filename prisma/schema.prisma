@@ -13,8 +13,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Commnent {
+  id Int @default(autoincrement()) @id
+  comment String
+  post Posts @relation(fields: [postId], references: [id])
+  postId Int
+}
+
 model Posts {
   id Int @default(autoincrement()) @id
   title String
-  bode String
+  body String
+  comment Commnent[]
 }
