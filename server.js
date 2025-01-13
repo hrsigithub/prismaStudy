@@ -5,7 +5,7 @@ const PORT = 8000;
 const prisma = new PrismaClient();
 
 // post JSON Format.
-app.use(express.json())
+app.use(express.json());
 
 app.post("/", async (req, res) => {
   const { title, body } = req.body; // from postMan
@@ -19,6 +19,24 @@ app.post("/", async (req, res) => {
   });
 
   return res.json(posts);
+});
+
+app.get("/", async (req, res) => {
+  const posts = await prisma.posts.findMany();
+
+  return res.json(posts);
+});
+
+app.get("/:id", async (req, res) => {
+  const id = req.params.id;
+
+  const post = await prisma.posts.findUnique({
+    where: {
+      id: Number(id),
+    },
+  });
+
+  return res.json(post);
 });
 
 app.listen(PORT, () => {
